@@ -1,0 +1,22 @@
+﻿@page
+@model RCALogBuilder.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hero-card my-5 mx-auto" style="max-width:920px;">
+    <div class="row g-0 align-items-center">
+        <div class="col-md-7 p-4">
+            <h1 class="page-title">RCALogBuilder</h1>
+            <p class="lead muted-note">Create incident post-mortems and RCA reports quickly and export them as Markdown files for GitHub or internal documentation.</p>
+
+            <p>
+                <a class="btn btn-primary btn-lg" href="/Incident" role="button">Create Incident Report</a>
+                <a class="btn btn-secondary btn-lg ms-2" asp-page="/Privacy">Privacy</a>
+            </p>
+        </div>
+        <div class="col-md-5 d-none d-md-block p-3">
+            <img src="/images/incident_illustration.svg" alt="Incident" class="img-fluid" />
+        </div>
+    </div>
+</div>

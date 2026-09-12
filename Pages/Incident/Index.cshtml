@@ -1,0 +1,76 @@
+@page
+@model RCALogBuilder.Pages.Incident.IndexModel
+@{
+    ViewData["Title"] = "Create Incident Report";
+}
+
+<div class="incident-form-card mx-auto" style="max-width:900px; margin-top:1.5rem;">
+    <h1 class="mb-3 page-title">Incident Report / RCA</h1>
+
+    <form method="post" asp-page-handler="ExportMarkdown" novalidate>
+        <partial name="_ValidationScriptsPartial" />
+        <div class="text-danger mb-3">@Html.ValidationSummary()</div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="Incident.DowntimeStart" class="form-label"></label>
+                <input asp-for="Incident.DowntimeStart" class="form-control" type="datetime-local" />
+                <span asp-validation-for="Incident.DowntimeStart" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Incident.ServicesAffected" class="form-label"></label>
+                <input asp-for="Incident.ServicesAffected" class="form-control" />
+                <span asp-validation-for="Incident.ServicesAffected" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Incident.Trigger" class="form-label"></label>
+            <textarea asp-for="Incident.Trigger" class="form-control" rows="2" placeholder="What triggered the incident?"></textarea>
+            <span asp-validation-for="Incident.Trigger" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Incident.Timeline" class="form-label"></label>
+            <textarea asp-for="Incident.Timeline" class="form-control" rows="6" placeholder="Provide a chronological timeline with timestamps."></textarea>
+            <span asp-validation-for="Incident.Timeline" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Incident.Detection" class="form-label"></label>
+                <textarea asp-for="Incident.Detection" class="form-control" rows="3" placeholder="How was the incident detected?"></textarea>
+                <span asp-validation-for="Incident.Detection" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Incident.Containment" class="form-label"></label>
+                <textarea asp-for="Incident.Containment" class="form-control" rows="3" placeholder="What containment actions were taken?"></textarea>
+                <span asp-validation-for="Incident.Containment" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Incident.RootCause" class="form-label"></label>
+            <textarea asp-for="Incident.RootCause" class="form-control" rows="4" placeholder="Describe the root cause analysis."></textarea>
+            <span asp-validation-for="Incident.RootCause" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Incident.Resolution" class="form-label"></label>
+                <textarea asp-for="Incident.Resolution" class="form-control" rows="3" placeholder="How was the incident resolved?"></textarea>
+                <span asp-validation-for="Incident.Resolution" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Incident.Prevention" class="form-label"></label>
+                <textarea asp-for="Incident.Prevention" class="form-control" rows="3" placeholder="Prevention and action items."></textarea>
+                <span asp-validation-for="Incident.Prevention" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="d-flex gap-2 mt-3">
+            <button type="submit" class="btn btn-primary">Export Markdown</button>
+            <a asp-page="/Index" class="btn btn-secondary">Home</a>
+        </div>
+    </form>
+</div>
