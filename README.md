@@ -162,6 +162,12 @@ The generated `.md` report adheres to standard SRE/DevOps post-mortem structures
 * **Root Cause Analysis (RCA):** Detailed technical root-cause breakdown.
 * **Prevention & Action Items:** Follow-up tasks, monitoring improvements, and architectural remediations.
 
+
+## Pages
+
+<img width="1866" height="909" alt="image" src="https://github.com/user-attachments/assets/00d0f7d9-0a02-4692-b9f7-cba0c67d7da5" />
+<img width="1410" height="1031" alt="image" src="https://github.com/user-attachments/assets/89118b02-87cf-4e02-ad56-a8ea561d2d21" />
+
 ---
 
 ## License
